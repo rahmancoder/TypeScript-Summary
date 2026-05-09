@@ -61,3 +61,15 @@ const buyer: { CustomerName: string; address: string; contactNumber: number } =
 const { CustomerName, contactNumber } = buyer;
 
 // console.log(CustomerName, contactNumber);
+
+
+// Ternary, Nullish, Optional chaining
+const stock = 0;
+// ternary
+const PrdctStatus = stock > 0 ? "available" : "out of stock";
+
+// nullish
+const discountPrice = products.discount ?? 0;
+
+//optional chaining
+const sellerName = products?.name;
