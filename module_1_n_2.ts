@@ -73,3 +73,42 @@ const discountPrice = products.discount ?? 0;
 
 //optional chaining
 const sellerName = products?.name;
+
+
+
+// Type in TS
+
+type TProduct = {
+  productName: string;
+  price: number;
+  address: {
+    thana: "kafrul";
+    zipcode: number;
+  };
+};
+
+const item: TProduct = {
+  productName: "Water Bottle",
+  price: 30,
+  address: {
+    thana: "kafrul", // mill thakte hobe
+    zipcode: 6000,
+  },
+};
+
+type TPaymentMethod = "bkash" | "rocket" | "nagad" | "mcash";
+
+let payment: TPaymentMethod = "bkash";
+
+type TUser = {
+  name: string;
+};
+
+type TSeller = TUser & {
+  shopName: string;
+};
+
+const SellerName: TSeller = {
+  name: "Rahman",
+  shopName: "Rahman EntirePrise",
+};
