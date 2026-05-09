@@ -112,3 +112,24 @@ const SellerName: TSeller = {
   name: "Rahman",
   shopName: "Rahman EntirePrise",
 };
+
+
+// Handling Unknown using type narrowing
+
+let userInput: unknown;
+
+function processInput(input: unknown) {
+  // (userInput as string).toUpperCase();
+  if (typeof input === "string") {
+    input.toUpperCase();
+  }
+}
+
+function throwError(msg: string): never {
+  throw new Error(msg);
+}
+
+// api response
+let apiData: unknown = "Rahman";
+
+let userName = (apiData as string).length;
