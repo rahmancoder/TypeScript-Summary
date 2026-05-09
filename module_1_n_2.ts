@@ -148,4 +148,28 @@ const prdct1: IProduct = {
   price: 10,
 };
 
+// Generics
+function identity<T>(value: T): T {
+  return value;
+}
+// any
+// const paracetamol = identity("Napa");
+const paracetamol = identity(12);
 
+// console.log("paracetamol", typeof paracetamol);
+
+// generics with interface
+interface IApiRes<TLLM> {
+  success: boolean;
+  data: TLLM;
+}
+
+const res: IApiRes<string[]> = {
+  success: true,
+  data: ["rice", "oil"],
+};
+
+interface IPersona {
+  name: string;
+  add: string;
+}
