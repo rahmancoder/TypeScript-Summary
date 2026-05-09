@@ -133,3 +133,19 @@ function throwError(msg: string): never {
 let apiData: unknown = "Rahman";
 
 let userName = (apiData as string).length;
+
+
+// Interface
+
+// interface
+interface IProduct {
+  productName: string;
+  price: number;
+}
+
+const prdct1: IProduct = {
+  productName: "Pressure medicine",
+  price: 10,
+};
+
+
