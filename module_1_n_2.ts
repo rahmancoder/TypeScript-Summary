@@ -36,3 +36,28 @@ function calculateTotal(price: number, quantity: number): number {
 }
 
 // console.log(calculateTotal(50, 5)); // 250
+
+
+
+// rest operator
+function totalCart(...prices: number[]): number {
+  return prices.reduce((sum, p) => sum + p, 250);
+}
+
+// spread
+const newProducts = [...baseProducts, "mustard oil"];
+
+//console.log(newProducts);
+
+// destructuring
+
+const buyer: { CustomerName: string; address: string; contactNumber: number } =
+{
+  CustomerName: "Rahman",
+  address: "Dhaka",
+  contactNumber: 1873334569,
+};
+
+const { CustomerName, contactNumber } = buyer;
+
+// console.log(CustomerName, contactNumber);
