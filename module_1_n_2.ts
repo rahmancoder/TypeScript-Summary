@@ -173,3 +173,61 @@ interface IPersona {
   name: string;
   add: string;
 }
+
+
+
+/ Constraints
+function getName<T extends IPersona>(param: T): string {
+  return param?.name;
+}
+
+// keyof
+function getProperty<T, K extends keyof T>(obj: T, key: K) {
+  return obj[key]; //obj.name, obj[name] = value -> key er kaan dhore value k ana
+}
+
+// api
+
+// constraints means badha boundary
+
+// enum
+
+enum OrderStatus {
+  Pending,
+  Shipped,
+  Delivered,
+}
+
+let orderStat = OrderStatus.Delivered;
+
+const Status = {
+  PENDING: "pending",
+  SHIPPED: "SHIPPED",
+} as const;
+
+type StatusCheck = (typeof Status)[keyof typeof Status];
+
+const typebosiye: StatusCheck = "pending";
+
+// console.log("last", typebosiye);
+
+type IsString<T> = T extends number ? "yes" : "no";
+
+type A = IsString<string>; // yes
+
+const xyz: A = "no";
+
+// mapped
+type TReadOnly<T> = {
+  readonly [k in keyof T]: T[k];
+};
+
+type TProductReadOnly = TReadOnly<TProduct>;
+
+type PartialProduct = Partial<TProduct>;
+
+type RequiredProduct = Required<PartialProduct>;
+
+type PickProduct = Pick<TProduct, "productName">;
+
+type OmitProduct = Omit<TProduct, "address">;
